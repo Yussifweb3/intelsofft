@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover Intelsofft's upcoming hardware products, including smart devices, renewable energy solutions, and more.">
+    <title>Products | Intelsofft</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(to right, #1a1a1a, #333333);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #000000;
+            padding: 15px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background-color: #333333;
+        }
+
+        .navbar .logo {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #ffffff;
+            letter-spacing: 2px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s, transform 0.3s;
+            border-radius: 5px;
+            font-size: 1.1em;
+        }
+
+        .navbar a:hover {
+            background-color: #333333;
+            transform: scale(1.05);
+        }
+
+        .navbar i {
+            margin-right: 8px;
+        }
+
+        .navbar .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            font-size: 1.5em;
+        }
+
+        .navbar .hamburger div {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        .navbar .menu {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .menu.active {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            right: 0;
+            background-color: #000;
+            width: 100%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar .menu a {
+            padding: 15px 20px;
+            border-bottom: 1px solid #333;
+            text-align: center;
+        }
+
+        .navbar .menu a:last-child {
+            border-bottom: none;
+        }
+
+        .hero {
+            height: 400px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            background: url('product.jpg') no-repeat center center;
+            background-size: cover;
+            border-bottom: 6px solid #28a745;
+            position: relative;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+        }
+
+        .hero-content h2 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .section {
+            padding: 60px 20px;
+            margin: 0 auto;
+            max-width: 1200px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .section:nth-child(even) {
+            background-color: #e9ecef;
+        }
+
+        .section:nth-child(odd) {
+            background-color: #ffffff;
+        }
+
+        .section-content {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            font-size: 2.8em;
+            margin-bottom: 30px;
+            color: #28a745;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: -webkit-linear-gradient(#28a745, #218838);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section h2::after {
+            content: '';
+            width: 60px;
+            height: 5px;
+            background-color: #28a745;
+            display: block;
+            margin: 15px auto;
+        }
+
+        .product-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .product-card {
+            background: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: calc(33% - 40px);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .product-card .product-details {
+            padding: 20px;
+        }
+
+        .product-card h3 {
+            margin: 10px 0;
+            font-size: 1.5em;
+        }
+
+        .product-card p {
+            font-size: 1em;
+            color: #666;
+        }
+
+        footer {
+            background-color: #333333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .social-icons {
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.5em;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #28a745;
+        }
+
+        @media (max-width: 768px) {
+            .navbar .menu {
+                display: none;
+            }
+
+            .navbar .menu.active {
+                display: flex;
+            }
+
+            .navbar .hamburger {
+                display: flex;
+            }
+
+            .product-card {
+                width: calc(50% - 40px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-card {
+                width: 100%;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">Intelsofft</div>
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="menu">
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <a href="services.html"><i class="fas fa-cogs"></i> Services</a>
+                <a href="products.html"><i class="fas fa-box"></i> Products</a>
+                <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+                <a href="tech-stack.html"><i class="fas fa-laptop-code"></i> Tech Stack</a>
+                <a href="case-studies.html"><i class="fas fa-briefcase"></i> Case Studies</a>
+                <a href="team.html"><i class="fas fa-users"></i> Team</a>
+                <a href="blog.html"><i class="fas fa-blog"></i> Blog</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Our coming soon Products</h2>
+        </div>
+    </section>
+
+    <div class="section">
+        <div class="section-content">
+            <h2>Innovative Hardware Products</h2>
+        </div>
+        <div class="product-cards">
+            <div class="product-card">
+                <img src="light.jpg" alt="Smart Light">
+                <div class="product-details">
+                    <h3>Smart Light</h3>
+                    <p>Energy-efficient smart lighting solutions for your home and office.</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="solar.jpg" alt="Solar Panel">
+                <div class="product-details">
+                    <h3>Solar Panel</h3>
+                    <p>High-performance solar panels for clean and sustainable energy.</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="thermo.jpg" alt="Smart Thermostat">
+                <div class="product-details">
+                    <h3>Smart Thermostat</h3>
+                    <p>Intelligent thermostat solutions for optimized climate control.</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="chager.jpg" alt="Wireless Charger">
+                <div class="product-details">
+                    <h3>Wireless Charger</h3>
+                    <p>Convenient wireless charging solutions for your devices.</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="camera.jpg" alt="Smart Camera">
+                <div class="product-details">
+                    <h3>Smart Camera</h3>
+                    <p>Advanced security cameras with smart features for your safety.</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="fitness.jpg" alt="Fitness Tracker">
+                <div class="product-details">
+                    <h3>Fitness Tracker</h3>
+                    <p>Track your health and fitness with our state-of-the-art trackers.</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="home.jpg" alt="Home Security System">
+                <div class="product-details">
+                    <h3>Home Security System</h3>
+                    <p>Comprehensive security systems to protect your home.</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="lock.jpg" alt="Smart Lock">
+                <div class="product-details">
+                    <h3>Smart Lock</h3>
+                    <p>Enhanced security with advanced smart lock systems.</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="air.jpg" alt="Air Purifier">
+                <div class="product-details">
+                    <h3>Air Purifier</h3>
+                    <p>Keep the air clean and healthy with our advanced purifiers.</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="plug.jpg" alt="Smart Plug">
+                <div class="product-details">
+                    <h3>Smart Plug</h3>
+                    <p>Control your devices remotely with our smart plugs.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Intelsofft. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="https://twitter.com/Intelsofft" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://facebook.com/Intelsofft" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com/Intelsofft" title="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('.menu').classList.toggle('active');
+            this.classList.toggle('active');
+        });
+
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

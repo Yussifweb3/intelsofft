@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Intelsofft's range of services, including DApps development, smart contracts, blockchain consulting, and more.">
+    <title>Services | Intelsofft</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(to right, #1a1a1a, #333333);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #000000;
+            padding: 15px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background-color: #333333;
+        }
+
+        .navbar .logo {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #ffffff;
+            letter-spacing: 2px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s, transform 0.3s;
+            border-radius: 5px;
+            font-size: 1.1em;
+        }
+
+        .navbar a:hover {
+            background-color: #333333;
+            transform: scale(1.05);
+        }
+
+        .navbar i {
+            margin-right: 8px;
+        }
+
+        .navbar .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            font-size: 1.5em;
+        }
+
+        .navbar .hamburger div {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        .navbar .menu {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .menu.active {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            right: 0;
+            background-color: #000;
+            width: 100%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar .menu a {
+            padding: 15px 20px;
+            border-bottom: 1px solid #333;
+            text-align: center;
+        }
+
+        .navbar .menu a:last-child {
+            border-bottom: none;
+        }
+
+        .hero {
+            height: 400px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            background: url('services-hero.jpg') no-repeat center center;
+            background-size: cover;
+            border-bottom: 6px solid #28a745;
+            position: relative;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+        }
+
+        .hero-content h2 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .section {
+            padding: 60px 20px;
+            margin: 0 auto;
+            max-width: 1200px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .section:nth-child(even) {
+            background-color: #e9ecef;
+        }
+
+        .section:nth-child(odd) {
+            background-color: #ffffff;
+        }
+
+        .section-content {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            font-size: 2.8em;
+            margin-bottom: 30px;
+            color: #28a745;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: -webkit-linear-gradient(#28a745, #218838);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section h2::after {
+            content: '';
+            width: 60px;
+            height: 5px;
+            background-color: #28a745;
+            display: block;
+            margin: 15px auto;
+            border-radius: 5px;
+        }
+
+        .service-card {
+            background: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+            max-width: 600px;
+            margin: 20px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            height: 200px;
+        }
+
+        .service-card img {
+            width: 40%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card .service-details {
+            padding: 20px;
+            width: 60%;
+            text-align: left;
+        }
+
+        .service-card h3 {
+            font-size: 1.8em;
+            margin: 0 0 15px;
+            color: #333333;
+        }
+
+        .service-card p {
+            font-size: 1.2em;
+            color: #555555;
+        }
+
+        .service-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-card:hover img {
+            transform: scale(1.1);
+        }
+
+        footer {
+            background: #333333;
+            color: #ffffff;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1em;
+        }
+
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            color: #ffffff;
+            font-size: 1.5em;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #28a745;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar .menu {
+                display: none;
+            }
+
+            .navbar .hamburger {
+                display: flex;
+            }
+
+            .navbar .menu.active {
+                display: flex;
+            }
+
+            .navbar .menu a {
+                padding: 15px;
+                border-bottom: 1px solid #333;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">Intelsofft</div>
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="menu">
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <a href="services.html"><i class="fas fa-cogs"></i> Services</a>
+                <a href="products.html"><i class="fas fa-box"></i> Products</a>
+                <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+                <a href="tech-stack.html"><i class="fas fa-laptop-code"></i> Tech Stack</a>
+                <a href="case-studies.html"><i class="fas fa-briefcase"></i> Case Studies</a>
+                <a href="team.html"><i class="fas fa-users"></i> Team</a>
+                <a href="blog.html"><i class="fas fa-blog"></i> Blog</a>
+            </div>
+        </div>
+        <div class="hero">
+            <div class="hero-content">
+                <h2>Our Services</h2>
+                <p>Explore our comprehensive range of services designed to drive innovation and efficiency.</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="section">
+        <div class="section-content">
+            <h2>Our Services</h2>
+            <div class="service-card">
+                <img src="dapp.jpg" alt="DApps Development">
+                <div class="service-details">
+                    <h3>DApps Development</h3>
+                    <p>Creating decentralized applications with cutting-edge technology for various industries.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="smart.jpg" alt="Smart Contracts">
+                <div class="service-details">
+                    <h3>Smart Contracts</h3>
+                    <p>Designing and implementing smart contracts to automate and secure transactions.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="block.jpg" alt="Blockchain Consulting">
+                <div class="service-details">
+                    <h3>Blockchain Consulting</h3>
+                    <p>Expert advisory services to help you leverage blockchain technology effectively.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="web3.jpg" alt="Web3 Consulting">
+                <div class="service-details">
+                    <h3>Web3 Consulting</h3>
+                    <p>Guidance on transitioning to Web3 technologies and decentralized platforms.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="cyber.jpg" alt="Cybersecurity">
+                <div class="service-details">
+                    <h3>Cybersecurity</h3>
+                    <p>Comprehensive security solutions to protect your digital assets and data.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="cloud.jpg" alt="Cloud Computing">
+                <div class="service-details">
+                    <h3>Cloud Computing</h3>
+                    <p>Advanced cloud solutions to enhance scalability and flexibility for your business.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="iot.jpg" alt="IoT Solutions">
+                <div class="service-details">
+                    <h3>IoT Solutions</h3>
+                    <p>Innovative Internet of Things solutions for smarter and more connected operations.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="ai.jpg" alt="AI Development">
+                <div class="service-details">
+                    <h3>AI Development</h3>
+                    <p>Developing AI-driven solutions to automate processes and gain insights.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="ui.jpg" alt="UX/UI Design">
+                <div class="service-details">
+                    <h3>UX/UI Design</h3>
+                    <p>Creating engaging and intuitive user experiences with top-notch design.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="didgital.jpg" alt="Digital Marketing">
+                <div class="service-details">
+                    <h3>Digital Marketing</h3>
+                    <p>Strategies to enhance your online presence and drive more traffic.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Intelsofft. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="https://twitter.com/Intelsofft" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://facebook.com/Intelsofft" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com/Intelsofft" title="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('.menu').classList.toggle('active');
+            this.classList.toggle('active');
+        });
+
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

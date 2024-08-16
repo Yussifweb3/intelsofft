@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Intelsofft's case studies showcasing our successful projects and innovative solutions in technology and eco-friendly initiatives.">
+    <meta name="keywords" content="Intelsofft, Case Studies, Technology, Innovation, Eco-Friendly">
+    <meta name="author" content="Intelsofft">
+    <title>Case Studies | Intelsofft</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+        }
+
+        header {
+            background: linear-gradient(to right, #1a1a1a, #333333);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #000000;
+            padding: 15px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar .logo {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #ffffff;
+            letter-spacing: 2px;
+        }
+
+        .navbar .menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar .menu a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1em;
+            padding: 10px;
+        }
+
+        .navbar .menu a:hover {
+            color: #28a745;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #ffffff;
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+
+        .menu-toggle.active {
+            display: flex;
+            position: absolute;
+            top: 60px;
+            right: 0;
+            background-color: #000000;
+            flex-direction: column;
+            width: 200px;
+            padding: 10px;
+        }
+
+        .menu-toggle a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+        }
+
+        .menu-toggle a:hover {
+            color: #28a745;
+        }
+
+        .case-studies-section {
+            padding: 40px 20px;
+            background: #ffffff;
+        }
+
+        .case-studies-section h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2em;
+            color: #333333;
+        }
+
+        .case-study {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+
+        .case-study-item {
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .case-study-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .case-study-item-content {
+            padding: 20px;
+        }
+
+        .case-study-item h3 {
+            margin: 0;
+            font-size: 1.5em;
+            color: #333333;
+        }
+
+        .case-study-item p {
+            margin: 10px 0;
+            color: #666666;
+        }
+
+        .case-study-item a {
+            color: #28a745;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .case-study-item a:hover {
+            text-decoration: underline;
+        }
+
+        .case-study-item:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #333333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .social-icons {
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.5em;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #28a745;
+        }
+
+        @media (max-width: 768px) {
+            .navbar .menu {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: none;
+            }
+
+            .menu-toggle.active {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">Intelsofft</div>
+            <div class="hamburger" id="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="menu">
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <a href="services.html"><i class="fas fa-cogs"></i> Services</a>
+                <a href="products.html"><i class="fas fa-box"></i> Products</a>
+                <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+                <a href="tech-stack.html"><i class="fas fa-laptop-code"></i> Tech Stack</a>
+                <a href="case-studies.html"><i class="fas fa-briefcase"></i> Case Studies</a>
+                <a href="team.html"><i class="fas fa-users"></i> Team</a>
+                <a href="blog.html"><i class="fas fa-blog"></i> Blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <a href="services.html"><i class="fas fa-cogs"></i> Services</a>
+                <a href="products.html"><i class="fas fa-box"></i> Products</a>
+                <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+                <a href="tech-stack.html"><i class="fas fa-laptop-code"></i> Tech Stack</a>
+                <a href="case-studies.html"><i class="fas fa-briefcase"></i> Case Studies</a>
+                <a href="team.html"><i class="fas fa-users"></i> Team</a>
+                <a href="blog.html"><i class="fas fa-blog"></i> Blog</a>
+            </div>
+        </div>
+    </header>
+    <section class="case-studies-section">
+        <h1>Our Case Studies</h1>
+        <div class="case-studies-container">
+            <div class="case-study-item">
+                <img src="google.jpg" alt="Case Study 1">
+                <div class="case-study-item-content">
+                    <h3>Case Study 1: Google’s Project Loon</h3>
+                    <p><strong>Challenge:</strong> Providing internet access in remote areas with limited infrastructure.</p>
+                    <p><strong>Solution:</strong> Deployment of high-altitude balloons to create a floating network of internet relays.</p>
+                    <p><strong>Result:</strong> Successful provision of internet in rural and disaster-stricken regions, including parts of Kenya and Puerto Rico.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+            <div class="case-study-item">
+                <img src="tesla.jpg" alt="Case Study 2">
+                <div class="case-study-item-content">
+                    <h3>Case Study 2: Tesla’s Gigafactory</h3>
+                    <p><strong>Challenge:</strong> Scaling up production of electric vehicle batteries to meet growing demand.</p>
+                    <p><strong>Solution:</strong> Construction of a massive factory in Nevada with advanced manufacturing processes and sustainability practices.</p>
+                    <p><strong>Result:</strong> Significant increase in battery production capacity and reduction in costs, supporting Tesla's expansion in electric vehicles.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+            <div class="case-study-item">
+                <img src="ibm.jpg" alt="Case Study 3">
+                <div class="case-study-item-content">
+                    <h3>Case Study 3: IBM Watson for Oncology</h3>
+                    <p><strong>Challenge:</strong> Enhancing cancer diagnosis and treatment recommendations.</p>
+                    <p><strong>Solution:</strong> Implementation of AI-driven analytics to assist oncologists in evaluating patient data and treatment options.</p>
+                    <p><strong>Result:</strong> Improved accuracy of diagnoses and personalized treatment plans, with successful applications in hospitals worldwide.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+            <div class="case-study-item">
+                <img src="amazon.jpg" alt="Case Study 4">
+                <div class="case-study-item-content">
+                    <h3>Case Study 4: Amazon Web Services (AWS) Cloud Migration</h3>
+                    <p><strong>Challenge:</strong> Migrating a large-scale enterprise IT infrastructure to the cloud.</p>
+                    <p><strong>Solution:</strong> Adoption of AWS services for scalable and cost-effective cloud computing solutions.</p>
+                    <p><strong>Result:</strong> Enhanced scalability, reduced IT costs, and improved performance and reliability of enterprise applications.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+            <div class="case-study-item">
+                <img src="nike.jpg" alt="Case Study 5">
+                <div class="case-study-item-content">
+                    <h3>Case Study 5: Nike’s Digital Transformation</h3>
+                    <p><strong>Challenge:</strong> Adapting to the evolving digital retail landscape.</p>
+                    <p><strong>Solution:</strong> Development of a digital platform for e-commerce, customer engagement, and data analytics.</p>
+                    <p><strong>Result:</strong> Increased online sales, enhanced customer experience, and deeper insights into consumer behavior.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+            <div class="case-study-item">
+                <img src="x.jpg" alt="Case Study 6">
+                <div class="case-study-item-content">
+                    <h3>Case Study 6: SpaceX’s Falcon Heavy Launch</h3>
+                    <p><strong>Challenge:</strong> Developing a reusable heavy-lift rocket to reduce space travel costs.</p>
+                    <p><strong>Solution:</strong> Design and successful launch of Falcon Heavy, capable of carrying large payloads to space.</p>
+                    <p><strong>Result:</strong> Demonstrated cost efficiency and payload capacity, paving the way for future space missions and commercial satellite launches.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+            <div class="case-study-item">
+                <img src="apple.jpg" alt="Case Study 7">
+                <div class="case-study-item-content">
+                    <h3>Case Study 7: Apple's Supply Chain Optimization</h3>
+                    <p><strong>Challenge:</strong> Managing a complex global supply chain for electronics.</p>
+                    <p><strong>Solution:</strong> Implementation of advanced supply chain management and logistics solutions to streamline operations.</p>
+                    <p><strong>Result:</strong> Improved supply chain efficiency, reduced lead times, and enhanced product availability.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+            <div class="case-study-item">
+                <img src="uber.jpg  " alt="Case Study 8">
+                <div class="case-study-item-content">
+                    <h3>Case Study 8: Uber’s Dynamic Pricing Model</h3>
+                    <p><strong>Challenge:</strong> Managing supply and demand in real-time for ride-sharing services.</p>
+                    <p><strong>Solution:</strong> Development of a dynamic pricing algorithm to balance demand with driver availability.</p>
+                    <p><strong>Result:</strong> Increased efficiency in ride allocation, improved driver earnings, and optimized user experience.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+            <div class="case-study-item">
+                <img src="micro.jpg" alt="Case Study 9">
+                <div class="case-study-item-content">
+                    <h3>Case Study 9: Microsoft's Azure Cognitive Services</h3>
+                    <p><strong>Challenge:</strong> Integrating AI capabilities into applications to enhance user interactions.</p>
+                    <p><strong>Solution:</strong> Provision of a suite of AI tools and APIs for natural language processing, computer vision, and more.</p>
+                    <p><strong>Result:</strong> Enabled developers to build smarter applications with advanced AI features, boosting productivity and innovation.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+            <div class="case-study-item">
+                <img src="ibm.jpg" alt="Case Study 10">
+                <div class="case-study-item-content">
+                    <h3>Case Study 10: IBM’s Blockchain for Supply Chain</h3>
+                    <p><strong>Challenge:</strong> Enhancing transparency and efficiency in global supply chains.</p>
+                    <p><strong>Solution:</strong> Implementation of a blockchain-based system to track and verify each step in the supply chain.</p>
+                    <p><strong>Result:</strong> Improved traceability, reduced fraud, and streamlined operations, benefiting multiple industries including food and pharmaceuticals.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div>© 2024 Intelsofft. All rights reserved.</div>
+        <div class="social-icons">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-linkedin-in"></a>
+            <a href="#" class="fab fa-instagram"></a>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('hamburger').addEventListener('click', function() {
+            document.getElementById('menu-toggle').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

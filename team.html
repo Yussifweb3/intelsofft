@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Meet the talented and dedicated team behind Intelsofft, experts in technology and eco-friendly solutions.">
+    <meta name="keywords" content="Intelsofft, Team, Technology, Eco-Friendly Solutions">
+    <meta name="author" content="Intelsofft">
+    <title>Team | Intelsofft</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+        }
+
+        header {
+            background: linear-gradient(to right, #1a1a1a, #333333);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #000000;
+            padding: 15px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar .logo {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #ffffff;
+            letter-spacing: 2px;
+        }
+
+        .navbar .menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar .menu a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1em;
+            padding: 10px;
+        }
+
+        .navbar .menu a:hover {
+            color: #28a745;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #ffffff;
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+
+        .menu-toggle.active {
+            display: flex;
+            position: absolute;
+            top: 60px;
+            right: 0;
+            background-color: #000000;
+            flex-direction: column;
+            width: 200px;
+            padding: 10px;
+        }
+
+        .menu-toggle a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+        }
+
+        .menu-toggle a:hover {
+            color: #28a745;
+        }
+
+        .team-section {
+            padding: 40px 20px;
+            background: #ffffff;
+        }
+
+        .team-section h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2em;
+            color: #333333;
+        }
+
+        .team-members {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .team-card {
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .team-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .team-card-content {
+            padding: 20px;
+        }
+
+        .team-card h3 {
+            margin: 0;
+            font-size: 1.5em;
+            color: #333333;
+        }
+
+        .team-card p {
+            margin: 10px 0;
+            color: #666666;
+        }
+
+        .team-card a {
+            color: #28a745;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .team-card a:hover {
+            text-decoration: underline;
+        }
+
+        .team-card:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #333333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .social-icons {
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.5em;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #28a745;
+        }
+
+        @media (max-width: 768px) {
+            .navbar .menu {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: none;
+            }
+
+            .menu-toggle.active {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">Intelsofft</div>
+            <div class="hamburger" id="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="menu">
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <a href="services.html"><i class="fas fa-cogs"></i> Services</a>
+                <a href="products.html"><i class="fas fa-box"></i> Products</a>
+                <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+                <a href="tech-stack.html"><i class="fas fa-laptop-code"></i> Tech Stack</a>
+                <a href="case-studies.html"><i class="fas fa-briefcase"></i> Case Studies</a>
+                <a href="team.html"><i class="fas fa-users"></i> Team</a>
+                <a href="blog.html"><i class="fas fa-blog"></i> Blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <a href="services.html"><i class="fas fa-cogs"></i> Services</a>
+                <a href="products.html"><i class="fas fa-box"></i> Products</a>
+                <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+                <a href="tech-stack.html"><i class="fas fa-laptop-code"></i> Tech Stack</a>
+                <a href="case-studies.html"><i class="fas fa-briefcase"></i> Case Studies</a>
+                <a href="team.html"><i class="fas fa-users"></i> Team</a>
+                <a href="blog.html"><i class="fas fa-blog"></i> Blog</a>
+            </div>
+        </div>
+    </header>
+    <section class="team-section">
+        <h1>Meet Our Team</h1>
+        <div class="team-members">
+            <div class="team-card">
+                <img src="images/team1.jpg" alt="John Doe">
+                <div class="team-card-content">
+                    <h3>Yussif Abdul-Jalil</h3>
+                    <p>CEO & Founder</p>
+                    <a href="https://www.linkedin.com/in/johndoe" target="_blank">LinkedIn Profile</a>
+                </div>
+            </div>
+            <div class="team-card">
+                <img src="images/team2.jpg" alt="Jane Smith">
+                <div class="team-card-content">
+                    <h3>Yussif Mubaik</h3>
+                    <p>Chief Technology Officer</p>
+                    <a href="https://www.linkedin.com/in/janesmith" target="_blank">LinkedIn Profile</a>
+                </div>
+            </div>
+            <div class="team-card">
+                <img src="images/team3.jpg" alt="Michael Johnson">
+                <div class="team-card-content">
+                    <h3>Michael Johnson</h3>
+                    <p>Head of Marketing</p>
+                    <a href="https://www.linkedin.com/in/michaeljohnson" target="_blank">LinkedIn Profile</a>
+                </div>
+            </div>
+            <div class="team-card">
+                <img src="images/team4.jpg" alt="Emily Davis">
+                <div class="team-card-content">
+                    <h3>Demole Nathelene</h3>
+                    <p>Lead Developer</p>
+                    <a href="https://www.linkedin.com/in/emilydavis" target="_blank">LinkedIn Profile</a>
+                </div>
+            </div>
+            <div class="team-card">
+                <img src="images/team5.jpg" alt="Chris Brown">
+                <div class="team-card-content">
+                    <h3>Mohammed Maher</h3>
+                    <p>Product Manager</p>
+                    <a href="https://www.linkedin.com/in/chrisbrown" target="_blank">LinkedIn Profile</a>
+                </div>
+            </div>
+            <div class="team-card">
+                <img src="images/team6.jpg" alt="Sarah Wilson">
+                <div class="team-card-content">
+                    <h3>Abdulai Waduud</h3>
+                    <p>UX/UI Designer</p>
+                    <a href="https://www.linkedin.com/in/sarahwilson" target="_blank">LinkedIn Profile</a>
+                </div>
+            </div>
+            <div class="team-card">
+                <img src="images/team7.jpg" alt="David Lee">
+                <div class="team-card-content">
+                    <h3>Mohammed Abubakar</h3>
+                    <p>Data Scientist</p>
+                    <a href="https://www.linkedin.com/in/davidlee" target="_blank">LinkedIn Profile</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div>© 2024 Intelsofft. All rights reserved.</div>
+        <div class="social-icons">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-linkedin-in"></a>
+            <a href="#" class="fab fa-instagram"></a>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('hamburger').addEventListener('click', function() {
+            document.getElementById('menu-toggle').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

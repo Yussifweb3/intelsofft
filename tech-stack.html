@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Intelsofft's comprehensive technology stack including Web3, Blockchain, AI, and more. Discover our innovative solutions and services powered by cutting-edge technologies.">
+    <meta name="keywords" content="Technology Stack, Web3, Blockchain, AI, React, Node.js, Django, AWS, Docker, Kubernetes, GraphQL, Java">
+    <meta name="author" content="Intelsofft">
+    <meta property="og:title" content="Technology Stack | Intelsofft">
+    <meta property="og:description" content="Explore Intelsofft's technology stack, featuring Web3, Blockchain, AI, and more. Learn about the technologies that drive our innovative solutions.">
+    <meta property="og:image" content="images/tech-stack-hero.jpg">
+    <meta property="og:url" content="https://www.intelsofft.com/tech-stack.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Intelsofft">
+    <title>Technology Stack | Intelsofft</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(to right, #1a1a1a, #333333);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #000000;
+            padding: 15px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background-color: #333333;
+        }
+
+        .navbar .logo {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #ffffff;
+            letter-spacing: 2px;
+        }
+
+        .navbar .menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar .menu a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1em;
+            padding: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar .menu a:hover {
+            color: #28a745;
+        }
+
+        .navbar .hamburger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .navbar .hamburger div {
+            width: 25px;
+            height: 3px;
+            background: #ffffff;
+        }
+
+        .hero {
+            background: url('tech.jpg') no-repeat center center/cover;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .section {
+            padding: 40px 20px;
+        }
+
+        .section-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section-content h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .tech-stack {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .tech-card {
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            overflow: hidden;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .tech-card i {
+            font-size: 3em;
+            color: #28a745;
+            margin-bottom: 20px;
+        }
+
+        .tech-card-content {
+            width: 100%;
+        }
+
+        .tech-card-content h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .tech-card-content p {
+            font-size: 1em;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .tech-card-content a {
+            text-decoration: none;
+            color: #28a745;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .tech-card-content a:hover {
+            color: #218838;
+        }
+
+        .tech-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background-color: #333333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .social-icons {
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.5em;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #28a745;
+        }
+
+        @media (max-width: 768px) {
+            .navbar .menu {
+                display: none;
+            }
+
+            .navbar .menu.active {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .navbar .hamburger {
+                display: flex;
+            }
+
+            .tech-card {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .tech-card i {
+                font-size: 4em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section-content h2 {
+                font-size: 2em;
+            }
+
+            .tech-card {
+                width: calc(100% - 20px);
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .tech-card i {
+                font-size: 4em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">Intelsofft</div>
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="menu">
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <a href="services.html"><i class="fas fa-cogs"></i> Services</a>
+                <a href="products.html"><i class="fas fa-box"></i> Products</a>
+                <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+                <a href="tech-stack.html"><i class="fas fa-laptop-code"></i> Tech Stack</a>
+                <a href="case-studies.html"><i class="fas fa-briefcase"></i> Case Studies</a>
+                <a href="team.html"><i class="fas fa-users"></i> Team</a>
+                <a href="blog.html"><i class="fas fa-blog"></i> Blog</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Our Technology Stack</h2>
+        </div>
+    </section>
+
+    <div class="section">
+        <div class="section-content">
+            <h2>Technology Stack</h2>
+            <div class="tech-stack">
+                <!-- Web3 Technologies -->
+                <div class="tech-card">
+                    <i class="fas fa-globe"></i>
+                    <div class="tech-card-content">
+                        <h3>Web3</h3>
+                        <p>Web3 represents the decentralized web, focusing on user control and decentralized networks, leveraging blockchain technology.</p>
+                        <a href="#">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Blockchain Technologies -->
+                <div class="tech-card">
+                    <i class="fas fa-lock"></i>
+                    <div class="tech-card-content">
+                        <h3>Blockchain</h3>
+                        <p>Blockchain technology ensures secure, transparent, and immutable transactions by creating a decentralized ledger.</p>
+                        <a href="#">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- AI and Machine Learning -->
+                <div class="tech-card">
+                    <i class="fas fa-brain"></i>
+                    <div class="tech-card-content">
+                        <h3>AI & ML</h3>
+                        <p>Artificial Intelligence and Machine Learning drive automation and intelligent decision-making through advanced algorithms and data analysis.</p>
+                        <a href="#">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Cloud Computing -->
+                <div class="tech-card">
+                    <i class="fas fa-cloud"></i>
+                    <div class="tech-card-content">
+                        <h3>Cloud Computing</h3>
+                        <p>Cloud computing provides scalable and on-demand computing resources over the internet, optimizing flexibility and efficiency.</p>
+                        <a href="#">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Cybersecurity -->
+                <div class="tech-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <div class="tech-card-content">
+                        <h3>Cybersecurity</h3>
+                        <p>Cybersecurity focuses on protecting systems and networks from digital attacks, ensuring data integrity and privacy.</p>
+                        <a href="#">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Intelsofft. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="https://facebook.com/intelsofft" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/intelsofft" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://linkedin.com/company/intelsofft" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://instagram.com/intelsofft" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const navbar = document.querySelector('.navbar');
+            const menu = document.querySelector('.menu');
+            const hamburger = document.querySelector('.hamburger');
+
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+
+            hamburger.addEventListener('click', function() {
+                menu.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

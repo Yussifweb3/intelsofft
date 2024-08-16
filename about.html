@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Intelsofft</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background: #f4f4f4;
+        }
+
+        header {
+            background: linear-gradient(to right, #1a1a1a, #333333);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 1.3em;
+            margin-top: 10px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #000000;
+            padding: 15px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background-color: #333333;
+        }
+
+        .navbar .logo {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #ffffff;
+            letter-spacing: 2px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s, transform 0.3s;
+            border-radius: 5px;
+            font-size: 1.1em;
+        }
+
+        .navbar a:hover {
+            background-color: #333333;
+            transform: scale(1.05);
+        }
+
+        .navbar i {
+            margin-right: 8px;
+        }
+
+        .hero {
+            height: 400px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            background: url('about-hero.jpg') no-repeat center center;
+            background-size: cover;
+            border-bottom: 6px solid #28a745;
+            position: relative;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+        }
+
+        .hero-content h2 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .section {
+            padding: 60px 20px;
+            margin: 0 auto;
+            max-width: 1200px;
+            position: relative;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .section:nth-child(even) {
+            background-color: #e9ecef;
+        }
+
+        .section:nth-child(odd) {
+            background-color: #ffffff;
+        }
+
+        .section-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 2.8em;
+            margin-bottom: 30px;
+            color: #28a745;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: -webkit-linear-gradient(#28a745, #218838);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section h2::after {
+            content: '';
+            width: 60px;
+            height: 5px;
+            background-color: #28a745;
+            display: block;
+            margin: 15px auto;
+            border-radius: 5px;
+        }
+
+        .section-content p {
+            font-size: 1.3em;
+            margin-bottom: 25px;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .section-link {
+            display: inline-block;
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #28a745, #218838);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: background 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-link:hover {
+            background: linear-gradient(135deg, #218838, #28a745);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background: #333333;
+            color: #ffffff;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1em;
+        }
+
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            color: #ffffff;
+            font-size: 1.5em;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #28a745;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h2 {
+                font-size: 2em;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">Intelsofft</div>
+            <div class="navbar-menu">
+                <a href="index.html"><i class="fas fa-home"></i>Home</a>
+                <a href="about.html"><i class="fas fa-user"></i>About</a>
+                <a href="services.html"><i class="fas fa-cogs"></i>Services</a>
+                <a href="contact.html"><i class="fas fa-envelope"></i>Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h2>About Intelsofft</h2>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-content">
+            <h2>Our Vision</h2>
+            <p>At Intelsofft, our vision is to be at the forefront of technological innovation, driving progress through AI, Quantum Computing, Blockchain, and Web3 technologies. We aim to create solutions that empower businesses and enhance lives worldwide.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-content">
+            <h2>Our Mission</h2>
+            <p>Our mission is to develop cutting-edge solutions that leverage advanced technologies to solve complex problems and foster sustainable growth. We are dedicated to delivering excellence and pushing the boundaries of innovation in every project we undertake.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-content">
+            <h2>Our Values</h2>
+            <p>Integrity, Innovation, and Excellence are the core values that drive us. We are committed to maintaining the highest standards of ethical practices, continuously exploring new technological frontiers, and delivering top-notch solutions to our clients.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Intelsofft. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://instagram.com" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+</body>
+
+</html>
